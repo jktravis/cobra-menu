@@ -25,10 +25,10 @@ function Header() {
       <img src="http://via.placeholder.com/300x65" />
       <IncidentHeaderTable
         data={[
-          ["Type", "Incident"],
+          ["Position", faker.name.jobTitle()],
           ["Status", "Open"],
           ["Expired", `${faker.random.boolean()}`],
-          ["Area", faker.name.jobArea()]
+          ["Type", "Actual"]
         ]}
       />
       <IncidentTitle/>

@@ -4,9 +4,12 @@
   "private": true,
   "dependencies": {
     "emotion": "^9.2.12",
+    "polished": "^3.0.3",
+    "ramda": "^0.26.1",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
     "react-emotion": "^9.2.12",
+    "react-icons": "^3.5.0",
     "react-scripts": "2.1.8"
   },
   "scripts": {

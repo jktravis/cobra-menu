@@ -1,14 +1,20 @@
 import React from "react";
 import styled from "react-emotion";
+import faker from "faker";
 
 const IncidentTitleStyle = styled("div")`
   font-size: 1.5rem;
+  flex-basis: 300px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 `;
 
-function IncidentTitle(props) {
+function IncidentTitle() {
+  const text = faker.lorem.sentence();
   return (
-    <IncidentTitleStyle>
-      A really bad thing happened
+    <IncidentTitleStyle title={text}>
+      {text}
     </IncidentTitleStyle>
   );
 }

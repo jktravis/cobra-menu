@@ -43,6 +43,9 @@ const Nav = styled("nav")`
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
     width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     &:hover {
       border-left: 2px solid ${accentColor};

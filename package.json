@@ -28,6 +28,7 @@
     "not op_mini all"
   ],
   "devDependencies": {
+    "faker": "^4.1.0",
     "prettier": "^1.16.4"
   }
 }

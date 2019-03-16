@@ -2,13 +2,11 @@ import React from "react";
 import styled from "react-emotion";
 import { FaSearch } from "react-icons/fa";
 
-const bgColor = "#9f9d9d";
-const textColor = "#f7f7f7";
 const SearchBarStyle = styled("div")`
   border-radius: 20px;
-  background-color: ${bgColor};
+  background-color: ${({ theme }) => theme.lightGray};
   padding: 0.5rem;
-  color: ${textColor};
+    color: ${({ theme }) => theme.white};
 
   input {
     padding-top: 8px;
@@ -16,10 +14,10 @@ const SearchBarStyle = styled("div")`
     padding-left: 8px;
     width: 150px;
     height: 20px;
-    background-color: ${bgColor};
+    background-color: ${({ theme }) => theme.lightGray};
     border: none;
     outline: none;
-    color: ${textColor};
+    color: ${({ theme }) => theme.white};
     font-size: 1.1rem;
     transition: width 0.4s ease;
   }
@@ -27,7 +25,7 @@ const SearchBarStyle = styled("div")`
   input::placeholder {
     padding-top: 0.25rem;
     font-size: 1rem;
-    color: ${textColor};
+    color: ${({ theme }) => theme.white};
   }
   input:focus {
     width: 200px;

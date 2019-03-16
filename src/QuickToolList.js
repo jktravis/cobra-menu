@@ -8,6 +8,7 @@ const QuickToolListStyle = styled("div")`
   margin-top: .25rem;
   justify-content: space-between;
   font-size: 1.2rem;
+  color: ${({ theme }) => theme.darkGray};
   a {
     text-decoration: none;
   }

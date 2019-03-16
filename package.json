@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "emotion": "^9.2.12",
+    "emotion-theming": "^9.2.9",
     "polished": "^3.0.3",
     "ramda": "^0.26.1",
     "react": "^16.8.4",

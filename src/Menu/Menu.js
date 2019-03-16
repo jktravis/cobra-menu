@@ -4,6 +4,7 @@ import { FaDotCircle, FaHome, FaListUl, FaToolbox, FaUsers } from "react-icons/f
 import * as R from "ramda";
 import { darken } from "polished";
 import { bindActionCreators, initialState, reducer } from "./menuReducer";
+import MenuItem from "./MenuItem";
 
 const Nav = styled("nav")`
   background-color: ${({ theme }) => theme.darkGray};
@@ -35,9 +36,10 @@ const Nav = styled("nav")`
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    position: relative;
 
     &:hover {
-      border-left: 2px solid ${({ theme }) => theme.accentColor};
+      //border-left: 2px solid ${({ theme }) => theme.accentColor};
     }
   }
 
@@ -47,7 +49,7 @@ const Nav = styled("nav")`
   }
 
   .sub-menu li {
-    background-color: ${({ theme }) => darken(.1, theme.black)};
+    background-color: ${({ theme }) => darken(0.1, theme.black)};
   }
   .sub-menu li:hover {
     border-left: none;
@@ -77,8 +79,6 @@ function Menu() {
   const { toggleMenu } = bindActionCreators(dispatch);
   const { expandedMenus } = state;
 
-  console.log(expandedMenus);
-
   return (
     <Nav>
       <header>
@@ -99,35 +99,35 @@ function Menu() {
         </NavHeaderButton>
       </header>
       <ul className="menu-list">
-        <li>
-          <a href="#" onClick={() => toggleMenu("home")}>
-            <FaHome />
-          </a>
-          {R.includes("home", expandedMenus) && (
-            <ul className="menu-list sub-menu">
-              <li>
-                <a href="#">
-                  <FaListUl />
-                </a>
-              </li>
-            </ul>
-          )}
-        </li>
-        <li>
-          <a href="#" className="disabled" onClick={() => toggleMenu("list")}>
-            <FaDotCircle />
-          </a>
-        </li>
-        <li>
-          <a href="#" onClick={() => toggleMenu("list")}>
-            <FaUsers />
-          </a>
-        </li>
+        <MenuItem
+          isExpanded={R.includes("home", expandedMenus)}
+          toggleFn={toggleMenu}
+          Icon={FaHome}
+          subMenuItems={[
+            {
+              Icon: FaListUl
+            }
+          ]}
+        />
+        <MenuItem
+          isExpanded={R.includes("list", expandedMenus)}
+          toggleFn={toggleMenu}
+          Icon={FaDotCircle}
+          disabled
+        />
+
+        <MenuItem
+          isExpanded={R.includes("users", expandedMenus)}
+          toggleFn={toggleMenu}
+          Icon={FaUsers}
+        />
       </ul>
       <footer>
-        <a href="#">
-          <FaToolbox />
-        </a>
+        <MenuItem
+          isExpanded={R.includes("users", expandedMenus)}
+          toggleFn={toggleMenu}
+          Icon={FaToolbox}
+        />
       </footer>
     </Nav>
   );

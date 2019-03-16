@@ -11,11 +11,10 @@ const HeaderTableWrapper = styled("div")`
 `;
 
 function IncidentHeaderTable({ data }) {
-  console.log(data);
   return (
     <HeaderTableWrapper>
       {data.map(([a, b]) => (
-        <div>
+        <div key={`${a}-${b}`}>
           <strong>{a}: </strong>
           <span>{b}</span>
         </div>

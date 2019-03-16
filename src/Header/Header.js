@@ -5,6 +5,7 @@ import faker from "faker";
 import UserMenu from "../UserMenu";
 import QuickToolList from "../QuickToolList";
 import SearchBar from "../SearchBar";
+import IncidentTitle from "../IncidentTitle";
 
 const HeaderWrapper = styled("header")`
   background: #f7f7f7;
@@ -27,17 +28,10 @@ function Header() {
           ["Type", "Incident"],
           ["Status", "Open"],
           ["Expired", `${faker.random.boolean()}`],
-          ["Ticker", "N/A"]
+          ["Area", faker.name.jobArea()]
         ]}
       />
-      <IncidentHeaderTable
-        data={[
-          ["DataElement", faker.lorem.words()],
-          ["Answer", "42"],
-          ["Area", faker.name.jobArea()],
-          ["DataElement", "N/A"]
-        ]}
-      />
+      <IncidentTitle/>
       <QuickToolList/>
       <SearchBar/>
       <UserMenu/>

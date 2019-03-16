@@ -21,6 +21,8 @@ const ContentPlaceholder = styled("div")`
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 93vw;
+  height: 88vh;
 `;
 
 class App extends Component {

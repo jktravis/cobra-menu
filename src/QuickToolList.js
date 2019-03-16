@@ -1,5 +1,5 @@
 import React from "react";
-import { FaHome, FaMap, FaSun } from "react-icons/fa";
+import { FaHouseDamage, FaMap, FaSun } from "react-icons/fa";
 import styled from "react-emotion";
 
 const QuickToolListStyle = styled("div")`
@@ -7,7 +7,6 @@ const QuickToolListStyle = styled("div")`
   width: 4rem;
   margin-top: .25rem;
   justify-content: space-between;
-  align-self: flex-start;
   a {
     text-decoration: none;
   }
@@ -16,11 +15,11 @@ const QuickToolListStyle = styled("div")`
   }
 `;
 
-function QuickToolList(props) {
+function QuickToolList() {
   return (
     <QuickToolListStyle>
       <a href="#">
-        <FaHome/>
+        <FaHouseDamage/>
       </a>
       <a href="#">
         <FaMap/>

@@ -37,6 +37,7 @@ const Content = styled("div")`
   justify-content: center;
   align-items: center;
   margin: 0.5rem;
+  font-size: 5rem;
 `;
 
 const theme = {

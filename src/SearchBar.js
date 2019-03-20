@@ -6,12 +6,9 @@ const SearchBarStyle = styled("div")`
   border-radius: 20px;
   background-color: ${({ theme }) => theme.lightGray};
   padding: 0.5rem;
-    color: ${({ theme }) => theme.white};
+  color: ${({ theme }) => theme.white};
 
   input {
-    padding-top: 8px;
-    padding-bottom: 8px;
-    padding-left: 8px;
     width: 150px;
     height: 20px;
     background-color: ${({ theme }) => theme.lightGray};
@@ -45,8 +42,8 @@ function SearchBar() {
   return (
     <SearchBarStyle>
       <div className="search-bar__wrapper">
-        <FaSearch/>
-        <input type="search" placeholder="Search"/>
+        <FaSearch />
+        <input type="text" placeholder="Search" />
       </div>
     </SearchBarStyle>
   );

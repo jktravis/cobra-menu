@@ -5,10 +5,9 @@ const AccentMark = styled("div")`
   left: 0;
   height: 0;
   width: 2px;
-
   background: ${({ theme }) => theme.accentColor};
-
   transition: height 0.2s ease;
+  transform: translateY(-8px);
 
   &.expanded {
     height: 100%;

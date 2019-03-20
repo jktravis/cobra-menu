@@ -14,9 +14,14 @@ const Nav = styled("nav")`
 
   a {
     color: ${({ theme }) => theme.white};
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
   }
 
-  footer {
+  .bottom {
     position: absolute;
     bottom: 5px;
     left: 22px;
@@ -29,18 +34,7 @@ const Nav = styled("nav")`
   }
 
   li {
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
     position: relative;
-
-    &:hover {
-      //border-left: 2px solid ${({ theme }) => theme.accentColor};
-    }
   }
 
   .disabled {
@@ -50,6 +44,8 @@ const Nav = styled("nav")`
 
   .sub-menu li {
     background-color: ${({ theme }) => darken(0.1, theme.black)};
+    margin: 0 0 0 2px;
+    width: 58px;
   }
   .sub-menu li:hover {
     border-left: none;
@@ -106,6 +102,21 @@ function Menu() {
           subMenuItems={[
             {
               Icon: FaListUl
+            },
+            {
+              Icon: FaListUl
+            },
+            {
+              Icon: FaListUl
+            },
+            {
+              Icon: FaListUl
+            },
+            {
+              Icon: FaListUl
+            },
+            {
+              Icon: FaListUl
             }
           ]}
         />
@@ -122,13 +133,13 @@ function Menu() {
           Icon={FaUsers}
         />
       </ul>
-      <footer>
+      <ul className="menu-list bottom">
         <MenuItem
           isExpanded={R.includes("users", expandedMenus)}
           toggleFn={toggleMenu}
           Icon={FaToolbox}
         />
-      </footer>
+      </ul>
     </Nav>
   );
 }

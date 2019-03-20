@@ -3,6 +3,7 @@ import Menu from "./Menu";
 import Header from "./Header";
 import styled from "react-emotion";
 import { ThemeProvider } from "emotion-theming";
+import * as R from "ramda";
 
 const PageWrapper = styled("div")`
   display: flex;
@@ -14,6 +15,8 @@ const MainContent = styled(`div`)`
   top: 65px;
   z-index: -1;
   padding: 1rem;
+  display: flex;
+  flex-wrap: wrap;
 `;
 
 const ContentPlaceholder = styled("div")`
@@ -24,6 +27,16 @@ const ContentPlaceholder = styled("div")`
   align-items: center;
   width: 93vw;
   height: 88vh;
+`;
+
+const Content = styled("div")`
+  background: ${({ theme }) => theme.white};
+  width: 400px;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0.5rem;
 `;
 
 const theme = {
@@ -39,10 +52,13 @@ class App extends Component {
     return (
       <ThemeProvider theme={theme}>
         <PageWrapper>
-          <Menu/>
+          <Menu />
           <div>
-            <Header/>
+            <Header />
             <MainContent>
+              {R.range(0, 6).map(n => (
+                <Content>{n}</Content>
+              ))}
               <ContentPlaceholder>
                 <div>Content Goes Here</div>
               </ContentPlaceholder>

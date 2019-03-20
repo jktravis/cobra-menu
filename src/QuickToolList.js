@@ -17,6 +17,7 @@ const QuickToolListStyle = styled("div")`
   color: ${({ theme }) => theme.darkGray};
   a {
     text-decoration: none;
+    color: currentColor;
   }
   a:visited {
     color: currentColor;

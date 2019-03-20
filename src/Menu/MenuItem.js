@@ -7,9 +7,7 @@ function MenuItem({ toggleFn, isExpanded, Icon, subMenuItems, disabled }) {
     active: isExpanded
   });
   return (
-    <li
-      className={cn}
-    >
+    <li className={cn}>
       <a href="#" onClick={() => toggleFn("home")}>
         <Icon/>
       </a>

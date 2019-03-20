@@ -23,7 +23,7 @@ function MenuItem({ toggleFn, isActive, Icon, subMenuItems, disabled, label }) {
       </a>
       {isActive && hasLength(subMenuItems) && (
         <ul className="menu-list sub-menu">
-          {subMenuItems.map(({ Icon: SubIcon, url, subLabel }, idx) => (
+          {subMenuItems.map(({ Icon: SubIcon, url, label: subLabel }, idx) => (
             <li key={idx}>
               <a href={`#${url}`}>
                 <span className="menu-icon">

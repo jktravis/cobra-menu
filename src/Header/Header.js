@@ -10,10 +10,10 @@ import IncidentTitle from "../IncidentTitle";
 
 const HeaderWrapper = styled("header")`
   background: ${({ theme }) => theme.white};
-  border-bottom: 1px solid ${({ theme }) => darken(.2, theme.white)};
-  box-shadow: 0 2px 5px 0 ${({ theme }) => darken(.1, theme.white)};
+  border-bottom: 1px solid ${({ theme }) => darken(0.2, theme.white)};
+  box-shadow: 0 2px 5px 0 ${({ theme }) => darken(0.1, theme.white)};
   position: fixed;
-  width: 96vw;
+  width: 95vw;
   margin-left: 63px;
   display: flex;
   align-items: center;
@@ -29,13 +29,13 @@ function Header() {
           ["Position", faker.name.jobTitle()],
           ["Status", "Open"],
           ["Expired", `${faker.random.boolean()}`],
-          ["Type", "Actual"]
+          ["Type", "Actual"],
         ]}
       />
-      <IncidentTitle/>
-      <QuickToolList/>
-      <SearchBar/>
-      <UserMenu/>
+      <IncidentTitle />
+      <QuickToolList />
+      <SearchBar />
+      <UserMenu />
     </HeaderWrapper>
   );
 }

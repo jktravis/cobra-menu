@@ -11,12 +11,13 @@ const PageWrapper = styled("div")`
 
 const MainContent = styled(`div`)`
   position: relative;
-  left: 65px;
+  left: 63px;
   top: 65px;
   z-index: -1;
   padding: 1rem;
   display: flex;
   flex-wrap: wrap;
+  width: calc(100% - 95px);
 `;
 
 const ContentPlaceholder = styled("div")`
@@ -25,8 +26,8 @@ const ContentPlaceholder = styled("div")`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 93vw;
-  height: 88vh;
+  width: 100%;
+  height: 100%;
 `;
 
 const Content = styled("div")`
@@ -57,12 +58,12 @@ class App extends Component {
           <div>
             <Header />
             <MainContent>
-              {R.range(0, 6).map(n => (
-                <Content>{n}</Content>
-              ))}
               <ContentPlaceholder>
                 <div>Content Goes Here</div>
               </ContentPlaceholder>
+              {R.range(1, 100).map(n => (
+                <Content>{n}</Content>
+              ))}
             </MainContent>
           </div>
         </PageWrapper>

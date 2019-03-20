@@ -25,8 +25,7 @@ const Nav = styled("nav")`
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
+    padding: 0.5rem;
     text-decoration: none;
   }
 
@@ -92,8 +91,14 @@ const Nav = styled("nav")`
     }
   }
 
+  .menu-child-indicator {
+    display: none;
+  }
+
   .menu-label {
     display: none;
+    flex-grow: 1;
+    margin-left: 0.5rem;
   }
 
   .menu-icon {
@@ -104,6 +109,7 @@ const Nav = styled("nav")`
     max-width: 200px;
   }
 
+  &.expand .menu-child-indicator,
   &.expand .menu-label {
     display: block;
   }
@@ -156,7 +162,7 @@ function Menu() {
       </header>
       <ul className="menu-list">
         <MenuItem
-          isExpanded={R.includes("home", openSubMenus)}
+          isActive={R.includes("home", openSubMenus)}
           toggleFn={() => toggleSubMenu("home")}
           Icon={FaHome}
           label={"Home"}
@@ -179,7 +185,7 @@ function Menu() {
           ]}
         />
         <MenuItem
-          isExpanded={R.includes("list", openSubMenus)}
+          isActive={R.includes("list", openSubMenus)}
           toggleFn={() => toggleSubMenu("list")}
           Icon={FaDotCircle}
           label={"List"}
@@ -187,7 +193,7 @@ function Menu() {
         />
 
         <MenuItem
-          isExpanded={R.includes("users", openSubMenus)}
+          isActive={R.includes("users", openSubMenus)}
           toggleFn={() => toggleSubMenu("users")}
           label={"Users"}
           Icon={FaUsers}
@@ -195,7 +201,7 @@ function Menu() {
       </ul>
       <ul className="menu-list bottom">
         <MenuItem
-          isExpanded={R.includes("admin", openSubMenus)}
+          isActive={R.includes("admin", openSubMenus)}
           toggleFn={toggleSubMenu}
           Icon={FaToolbox}
           label={"Admin"}

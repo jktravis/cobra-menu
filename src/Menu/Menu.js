@@ -24,7 +24,10 @@ const Nav = styled("nav")`
   .bottom {
     position: absolute;
     bottom: 5px;
-    left: 22px;
+    
+    a {
+      padding: .5rem 1.5rem;
+    }
   }
 
   .menu-list {
@@ -35,6 +38,7 @@ const Nav = styled("nav")`
 
   li {
     position: relative;
+    transition: all .2s;
 
     &:before {
       content: "";
@@ -52,9 +56,15 @@ const Nav = styled("nav")`
 
     &.active,
     &:hover:not(.disabled) {
+      background: ${({ theme }) => darken(.1, theme.black)};
+      
       &:before {
         height: 100%;
       }
+    }
+    
+    &.active {
+      background: ${({ theme }) => darken(.1, theme.black)};
     }
 
     &.disabled {
@@ -66,7 +76,11 @@ const Nav = styled("nav")`
   }
 
   .sub-menu li {
-    background-color: ${({ theme }) => darken(0.1, theme.black)};
+    background-color: ${({ theme }) => theme.black};
+    
+    &:hover {
+      background-color: ${({ theme }) => theme.darkGray};
+    }
   }
 `;
 
@@ -92,6 +106,7 @@ function Menu() {
   const [state, dispatch] = useReducer(reducer, initialState);
   const { toggleMenu } = bindActionCreators(dispatch);
   const { expandedMenus } = state;
+  console.log(expandedMenus);
 
   return (
     <Nav>

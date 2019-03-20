@@ -105,13 +105,35 @@ const Nav = styled("nav")`
     height: 1em;
   }
 
-  &.expand {
-    max-width: 200px;
+  .logo {
+    .logo-background {
+      fill: ${({ theme }) => theme.darkGray};
+    }
+    &:hover {
+      background: ${({ theme }) => theme.accentColor};
+      .logo-background {
+        fill: ${({ theme }) => theme.accentColor};
+      }
+    }
+    .logo-path {
+      fill: ${({ theme }) => theme.white};
+    }
   }
 
-  &.expand .menu-child-indicator,
-  &.expand .menu-label {
-    display: block;
+  &.expand {
+    max-width: 200px;
+
+    .menu-child-indicator,
+    .menu-label {
+      display: block;
+    }
+
+    .logo {
+      background: ${({ theme }) => darken(0.2, theme.black)};
+      .logo-background {
+        fill: ${({ theme }) => darken(0.2, theme.black)};
+      }
+    }
   }
 `;
 
@@ -125,15 +147,6 @@ const NavHeaderButton = styled("button")`
   height: 62px;
 `;
 
-const LogoStyle = styled("svg")`
-  .logo-background {
-    fill: ${({ theme }) => theme.darkGray};
-  }
-  .logo-path {
-    fill: ${({ theme }) => theme.white};
-  }
-`;
-
 function Menu() {
   const [state, dispatch] = useReducer(reducer, initialState);
   const { toggleSubMenu, toggleMainMenu } = bindActionCreators(dispatch);
@@ -145,11 +158,12 @@ function Menu() {
     <Nav className={cx({ expand: expandMenu })}>
       <header>
         <NavHeaderButton onClick={toggleMainMenu}>
-          <LogoStyle
+          <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 1023 1023"
             width="100%"
             height="100%"
+            className="logo"
           >
             <rect width="1023" height="1023" className="logo-background" />
             <path
@@ -157,7 +171,7 @@ function Menu() {
               fillRule="evenodd"
               className="logo-path"
             />
-          </LogoStyle>
+          </svg>
         </NavHeaderButton>
       </header>
       <ul className="menu-list">

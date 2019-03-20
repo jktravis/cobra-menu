@@ -115,39 +115,33 @@ function Menu() {
       <ul className="menu-list">
         <MenuItem
           isExpanded={R.includes("home", expandedMenus)}
-          toggleFn={toggleMenu}
+          toggleFn={() => toggleMenu("home")}
           Icon={FaHome}
           subMenuItems={[
             {
-              Icon: FaListUl
+              Icon: FaListUl,
+              url: "foo"
             },
             {
-              Icon: FaListUl
+              Icon: FaListUl,
+              url: "bar"
             },
             {
-              Icon: FaListUl
+              Icon: FaListUl,
+              url: "baz"
             },
-            {
-              Icon: FaListUl
-            },
-            {
-              Icon: FaListUl
-            },
-            {
-              Icon: FaListUl
-            }
           ]}
         />
         <MenuItem
           isExpanded={R.includes("list", expandedMenus)}
-          toggleFn={toggleMenu}
+          toggleFn={() => toggleMenu("list")}
           Icon={FaDotCircle}
           disabled
         />
 
         <MenuItem
           isExpanded={R.includes("users", expandedMenus)}
-          toggleFn={toggleMenu}
+          toggleFn={() => toggleMenu("users")}
           Icon={FaUsers}
         />
       </ul>

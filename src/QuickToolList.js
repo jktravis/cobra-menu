@@ -21,16 +21,6 @@ const QuickToolListStyle = styled("div")`
   a:visited {
     color: currentColor;
   }
-
-  .quick-list-wrapper {
-    position: relative;
-
-    .badge {
-      position: absolute;
-      top: -7px;
-      left: -7px;
-    }
-  }
 `;
 
 function QuickToolList() {
@@ -45,12 +35,11 @@ function QuickToolList() {
       <a href="#">
         <FaQuestionCircle />
       </a>
-      <span className="quick-list-wrapper">
+      <Badge value={5}>
         <a href="#">
-          <Badge>5</Badge>
           <FaEnvelope />
         </a>
-      </span>
+      </Badge>
     </QuickToolListStyle>
   );
 }

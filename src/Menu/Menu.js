@@ -1,11 +1,11 @@
 import React, { useReducer } from "react";
-import styled from "react-emotion";
+import styled, { cx } from "react-emotion";
 import {
   FaDotCircle,
   FaHome,
   FaListUl,
   FaToolbox,
-  FaUsers
+  FaUsers,
 } from "react-icons/fa";
 import * as R from "ramda";
 import { darken } from "polished";
@@ -17,6 +17,8 @@ const Nav = styled("nav")`
   max-width: 62px;
   height: 100vh;
   position: fixed;
+  z-index: 1;
+  transition: max-width 0.2s;
 
   a {
     color: ${({ theme }) => theme.white};
@@ -25,6 +27,7 @@ const Nav = styled("nav")`
     align-items: center;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
+    text-decoration: none;
   }
 
   .bottom {
@@ -88,6 +91,22 @@ const Nav = styled("nav")`
       background-color: ${({ theme }) => theme.darkGray};
     }
   }
+
+  .menu-label {
+    display: none;
+  }
+
+  .menu-icon {
+    height: 1em;
+  }
+
+  &.expand {
+    max-width: 200px;
+  }
+
+  &.expand .menu-label {
+    display: block;
+  }
 `;
 
 const NavHeaderButton = styled("button")`
@@ -97,6 +116,7 @@ const NavHeaderButton = styled("button")`
   border-bottom: 1px solid ${({ theme }) => theme.black};
   background-color: ${({ theme }) => theme.darkGray};
   outline: transparent;
+  height: 62px;
 `;
 
 const LogoStyle = styled("svg")`
@@ -110,14 +130,15 @@ const LogoStyle = styled("svg")`
 
 function Menu() {
   const [state, dispatch] = useReducer(reducer, initialState);
-  const { toggleSubMenu } = bindActionCreators(dispatch);
-  const { openSubMenus } = state;
-  console.log(openSubMenus);
+  const { toggleSubMenu, toggleMainMenu } = bindActionCreators(dispatch);
+  const { openSubMenus, expandMenu } = state;
+
+  console.log(expandMenu);
 
   return (
-    <Nav>
+    <Nav className={cx({ expand: expandMenu })}>
       <header>
-        <NavHeaderButton>
+        <NavHeaderButton onClick={toggleMainMenu}>
           <LogoStyle
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 1023 1023"
@@ -138,39 +159,46 @@ function Menu() {
           isExpanded={R.includes("home", openSubMenus)}
           toggleFn={() => toggleSubMenu("home")}
           Icon={FaHome}
+          label={"Home"}
           subMenuItems={[
             {
               Icon: FaListUl,
-              url: "foo"
+              url: "foo",
+              label: "Foo",
             },
             {
               Icon: FaListUl,
-              url: "bar"
+              url: "bar",
+              label: "Bar",
             },
             {
               Icon: FaListUl,
-              url: "baz"
-            }
+              url: "baz",
+              label: "Baz",
+            },
           ]}
         />
         <MenuItem
           isExpanded={R.includes("list", openSubMenus)}
           toggleFn={() => toggleSubMenu("list")}
           Icon={FaDotCircle}
+          label={"List"}
           disabled
         />
 
         <MenuItem
           isExpanded={R.includes("users", openSubMenus)}
           toggleFn={() => toggleSubMenu("users")}
+          label={"Users"}
           Icon={FaUsers}
         />
       </ul>
       <ul className="menu-list bottom">
         <MenuItem
-          isExpanded={R.includes("users", openSubMenus)}
+          isExpanded={R.includes("admin", openSubMenus)}
           toggleFn={toggleSubMenu}
           Icon={FaToolbox}
+          label={"Admin"}
         />
       </ul>
     </Nav>

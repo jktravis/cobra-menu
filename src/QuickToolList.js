@@ -6,6 +6,7 @@ import {
   FaQuestionCircle,
 } from "react-icons/fa";
 import styled from "react-emotion";
+import Badge from "./Badge";
 
 const QuickToolListStyle = styled("div")`
   display: flex;
@@ -19,6 +20,16 @@ const QuickToolListStyle = styled("div")`
   }
   a:visited {
     color: currentColor;
+  }
+
+  .quick-list-wrapper {
+    position: relative;
+
+    .badge {
+      position: absolute;
+      top: -7px;
+      left: -7px;
+    }
   }
 `;
 
@@ -34,9 +45,12 @@ function QuickToolList() {
       <a href="#">
         <FaQuestionCircle />
       </a>
-      <a href="#">
-        <FaEnvelope />
-      </a>
+      <span className="quick-list-wrapper">
+        <a href="#">
+          <Badge>5</Badge>
+          <FaEnvelope />
+        </a>
+      </span>
     </QuickToolListStyle>
   );
 }

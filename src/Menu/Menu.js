@@ -30,25 +30,43 @@ const Nav = styled("nav")`
   .menu-list {
     list-style: none;
     margin: 0;
-    padding: 0.5rem 0 0.5rem 0;
+    padding: 0;
   }
 
   li {
     position: relative;
-  }
 
-  .disabled {
-    color: ${({ theme }) => darken(0.6, theme.white)};
-    cursor: default;
+    &:before {
+      content: "";
+      display: block;
+      background: ${({ theme }) => theme.accentColor};
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 2px;
+      height: 0%;
+      transform: translateY(-50%);
+      transition: all 0.2s;
+      z-index: 1;
+    }
+
+    &.active,
+    &:hover:not(.disabled) {
+      &:before {
+        height: 100%;
+      }
+    }
+
+    &.disabled {
+      a {
+        color: ${({ theme }) => darken(0.6, theme.white)};
+        cursor: default;
+      }
+    }
   }
 
   .sub-menu li {
     background-color: ${({ theme }) => darken(0.1, theme.black)};
-    margin: 0 0 0 2px;
-    width: 58px;
-  }
-  .sub-menu li:hover {
-    border-left: none;
   }
 `;
 

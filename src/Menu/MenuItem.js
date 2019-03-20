@@ -1,15 +1,16 @@
-import React, { useState } from "react";
-import AccentMarkDiv from "./AccentMarkDiv";
+import React from "react";
+import { cx } from "react-emotion";
 
 function MenuItem({ toggleFn, isExpanded, Icon, subMenuItems, disabled }) {
-  const [isMouseOver, setIsMouseOver] = useState(false);
+  const cn = cx({
+    disabled: disabled,
+    active: isExpanded
+  });
   return (
     <li
-      onMouseOver={() => setIsMouseOver(true)}
-      onMouseLeave={() => setIsMouseOver(false)}
+      className={cn}
     >
-      <AccentMarkDiv className={!disabled && (isMouseOver || isExpanded) ? "expanded" : ""}/>
-      <a href="#" onClick={() => toggleFn("home")} className={disabled ? "disabled" : ""}>
+      <a href="#" onClick={() => toggleFn("home")}>
         <Icon/>
       </a>
       {isExpanded && (

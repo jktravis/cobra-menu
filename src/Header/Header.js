@@ -14,16 +14,37 @@ const HeaderWrapper = styled("header")`
   box-shadow: 0 2px 5px 0 ${({ theme }) => darken(0.1, theme.white)};
   position: fixed;
   width: 95vw;
-  margin-left: 63px;
+  height: 62px;
+  margin-left: 62px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  .customer-logo-wrapper {
+    padding: 0.5rem;
+
+    .customer-logo {
+      border-radius: 4px;
+      transition: all 0.2s;
+      cursor: pointer;
+      &:hover {
+        box-shadow: 0 1px 10px ${({ theme }) => theme.lightGray};
+        transform: scale(1.007);
+        z-index: 2;
+      }
+    }
+  }
 `;
 
 function Header() {
   return (
     <HeaderWrapper>
-      <img src="http://via.placeholder.com/300x65" />
+      <div className="customer-logo-wrapper">
+        <img
+          src="https://source.unsplash.com/random/300x50"
+          className="customer-logo"
+        />
+      </div>
       <IncidentHeaderTable
         data={[
           ["Position", faker.name.jobTitle()],

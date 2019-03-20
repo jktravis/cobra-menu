@@ -55,7 +55,7 @@ const Nav = styled("nav")`
       top: 50%;
       left: 0;
       width: 2px;
-      height: 0%;
+      height: 0;
       transform: translateY(-50%);
       transition: all 0.2s;
       z-index: 1;

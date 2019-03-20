@@ -32,10 +32,7 @@ const Nav = styled("nav")`
   .bottom {
     position: absolute;
     bottom: 5px;
-
-    a {
-      padding: 0.5rem 1.5rem;
-    }
+    width: 100%;
   }
 
   .menu-list {

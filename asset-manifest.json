@@ -1,13 +1,13 @@
 {
-  "main.css": "/cobra-menu/static/css/main.4bf5386c.chunk.css",
-  "main.js": "/cobra-menu/static/js/main.da51efb1.chunk.js",
-  "main.js.map": "/cobra-menu/static/js/main.da51efb1.chunk.js.map",
+  "main.css": "/cobra-menu/static/css/main.34443e9e.chunk.css",
+  "main.js": "/cobra-menu/static/js/main.9cf649ae.chunk.js",
+  "main.js.map": "/cobra-menu/static/js/main.9cf649ae.chunk.js.map",
   "runtime~main.js": "/cobra-menu/static/js/runtime~main.d417c8ef.js",
   "runtime~main.js.map": "/cobra-menu/static/js/runtime~main.d417c8ef.js.map",
   "static/js/2.1c5b9225.chunk.js": "/cobra-menu/static/js/2.1c5b9225.chunk.js",
   "static/js/2.1c5b9225.chunk.js.map": "/cobra-menu/static/js/2.1c5b9225.chunk.js.map",
   "index.html": "/cobra-menu/index.html",
-  "precache-manifest.2172cd8fd4a3f6877a1635f03cd91646.js": "/cobra-menu/precache-manifest.2172cd8fd4a3f6877a1635f03cd91646.js",
+  "precache-manifest.3967cb7ab058c1748f07552719b603b9.js": "/cobra-menu/precache-manifest.3967cb7ab058c1748f07552719b603b9.js",
   "service-worker.js": "/cobra-menu/service-worker.js",
-  "static/css/main.4bf5386c.chunk.css.map": "/cobra-menu/static/css/main.4bf5386c.chunk.css.map"
+  "static/css/main.34443e9e.chunk.css.map": "/cobra-menu/static/css/main.34443e9e.chunk.css.map"
 }

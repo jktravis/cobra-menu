@@ -4,19 +4,19 @@ self.__precacheManifest = [
     "url": "/cobra-menu/static/js/runtime~main.d417c8ef.js"
   },
   {
-    "revision": "f78b61ef07438993912e",
-    "url": "/cobra-menu/static/js/main.da51efb1.chunk.js"
+    "revision": "a34e0f5284d4e46f00b0",
+    "url": "/cobra-menu/static/js/main.9cf649ae.chunk.js"
   },
   {
     "revision": "d9ac66e93bd0e18f12da",
     "url": "/cobra-menu/static/js/2.1c5b9225.chunk.js"
   },
   {
-    "revision": "f78b61ef07438993912e",
-    "url": "/cobra-menu/static/css/main.4bf5386c.chunk.css"
+    "revision": "a34e0f5284d4e46f00b0",
+    "url": "/cobra-menu/static/css/main.34443e9e.chunk.css"
   },
   {
-    "revision": "83c4ba2578a016bcefb802bc9f744828",
+    "revision": "5f1ac327ca9df404d9c42c5c541a935d",
     "url": "/cobra-menu/index.html"
   }
 ];

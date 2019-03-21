@@ -46,6 +46,7 @@ const theme = {
   lightGray: "#9f9d9d",
   darkGray: "#343A40",
   black: "#2d2d2d",
+  logoBlack: "#1d2122",
   accentColor: "#d83326",
 };
 

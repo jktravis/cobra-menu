@@ -71,7 +71,7 @@ const Nav = styled("nav")`
     }
 
     &.active {
-      background: ${({ theme }) => darken(0.1, theme.black)};
+      background: ${({ theme }) => theme.logoBlack};
     }
 
     &.disabled {
@@ -108,12 +108,20 @@ const Nav = styled("nav")`
     .logo-background {
       fill: ${({ theme }) => theme.darkGray};
     }
+    .logo-lg-text-background {
+      fill: ${({ theme }) => theme.logoBlack};
+    }
+    .logo-lg-img-background {
+      fill: ${({ theme }) => theme.accentColor};
+    }
     &:hover {
       background: ${({ theme }) => theme.accentColor};
       .logo-background {
         fill: ${({ theme }) => theme.accentColor};
       }
     }
+    .logo-lg-img-foreground,
+    .logo-lg-text,
     .logo-path {
       fill: ${({ theme }) => theme.white};
     }

@@ -2,7 +2,7 @@
   "name": "cobra-menu",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://jktravis.github.io/cobra-menu",
+  "homepage": "https://dynamisinc.github.io/cobra-layout",
   "dependencies": {
     "emotion": "^9.2.12",
     "emotion-theming": "^9.2.9",
